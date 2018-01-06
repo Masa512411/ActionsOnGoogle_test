@@ -1,5 +1,9 @@
 import json
-from flask import Flask,request,jsonify
+
+from flask import Flask
+from flask import request
+from flask import jsonify
+
 import ramdom
 
 app = Flask(__name__)
