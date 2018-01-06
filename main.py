@@ -5,6 +5,7 @@ import os
 from flask import Flask
 from flask import request
 from flask import jsonify
+from flask import make_response
 
 import random
 
@@ -31,7 +32,7 @@ def webhook():
 
     req["result"]["fulfillment"]["speech"] = speech
 
-    return jsonify(req)
+    return make_response(jsonify(req))
         
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 5000))
