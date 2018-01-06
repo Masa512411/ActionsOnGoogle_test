@@ -30,8 +30,11 @@ def webhook():
     elif novels == "世界の終わりとハードボイルドワンダーランド":
         speech = random.choice(list(quotations.get("セカオワ").values()))
 
-    return make_response(jsonify({'speech':speech,'displayText':speech}))
-        
+    res = make_response(jsonify({'speech':speech,'displayText':speech}))
+    res.headers['Content-Type'] = 'application/json'    
+    return res
+
+
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 5000))
 
