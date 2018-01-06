@@ -32,4 +32,4 @@ def webhook():
      return jsonify(req)
         
 if __name__ == '__main__':
-    main()
+    app.run(debug=False,port=port,host='0.0.0.0')
